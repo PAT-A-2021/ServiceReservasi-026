@@ -12,11 +12,11 @@ namespace ServiceReservasi
     public interface IService1
     {
         [OperationContract]
-        string pemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
+        string pemesanan(string ID_reservasi, string Nama_customer, string No_telpon, int Jumlah_pemesanan, string ID_lokasi);
         [OperationContract]
-        string editpemesanan(string IDPemesanan, string NamaCustomer);
+        string editpemesanan(string ID_reservasi, string Nama_customer, string No_telpon);
         [OperationContract]
-        string deletePemesanan(string IDPemesanan);
+        string deletePemesanan(string ID_reservasi);
         [OperationContract]
         List<CekLokasi> ReviewLokasi();
         [OperationContract]
@@ -52,15 +52,15 @@ namespace ServiceReservasi
     public class Pemesanan
     {
         [DataMember]
-        public string IDPemesanan { get; set; }
+        public string IDReservasi { get; set; }
         [DataMember]
-        public string NamaCustomer{ get; set; }
+        public string NamaCustomer { get; set; }
         [DataMember]
-        public string NoTelpon { get; set; }
+        public string NoTelepon { get; set; }
         [DataMember]
         public int JumlahPemesanan { get; set; }
         [DataMember]
-        public string IDLokasi { get; set; }
+        public string Lokasi { get; set; }
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
